@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { FirebaseService } from 'src/app/services/firebase.service';
 import { Router } from '@angular/router';
@@ -17,7 +17,17 @@ am4core.useTheme(am4themes_animated);
 export class DashboardComponent implements OnInit {
 
   private chart: am4charts.XYChart;
+  
   displayedColumns: string[] = ['sno', 'name', 'proffession', 'age','phone','action'];
+  userViewDisplay:boolean=true;
+  SingleRow:any;
+  userView(element) {
+    this.userViewDisplay=false;
+    this.SingleRow=element;
+  }
+  onBack() {
+    this.userViewDisplay=true;
+  }
   constructor(public formBuilder: FormBuilder,
     public firebaseService : FirebaseService,
     private zone: NgZone,
@@ -27,7 +37,6 @@ export class DashboardComponent implements OnInit {
   dataSource:any;
   ngOnInit() {
     this.firebaseService.getvolunteers().subscribe((response)=> {
-     console.log(response,"response");
      this.dataSource=response.map(e => {
       return e.payload.doc.data()
     }); 
@@ -39,36 +48,18 @@ export class DashboardComponent implements OnInit {
       let chart = am4core.create("chartdiv", am4charts.PieChart3D);
       chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
       chart.legend = new am4charts.Legend();
-      chart.data = [
-      {
-        country: "Lithuania",
-        litres: 501.9
-      },
-      {
-        country: "Czech Republic",
-        litres: 301.9
-      },
-      {
-        country: "Ireland",
-        litres: 201.1
-      },
-      {
-        country: "Germany",
-        litres: 165.8
-      },
-      {
-        country: "Australia",
-        litres: 139.9
-      },
-      {
-        country: "Austria",
-        litres: 128.3
-      }
-      ];
+      chart.data = 
+      [{country: "Lithuania",litres: 501.9},
+      {country: "Czech Republic",litres: 301.9},
+      {country: "Ireland",litres: 201.1},
+      {country: "Germany",litres: 165.8},
+      {country: "Australia",litres: 139.9},
+      {country: "Austria",litres: 128.3}];
+
       chart.innerRadius = 100;
-let series = chart.series.push(new am4charts.PieSeries3D());
-series.dataFields.value = "litres";
-series.dataFields.category = "country";
+      let series = chart.series.push(new am4charts.PieSeries3D());
+      series.dataFields.value = "litres";
+      series.dataFields.category = "country";
     });
   }
 }

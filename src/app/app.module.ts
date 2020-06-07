@@ -54,13 +54,15 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { LoginComponent } from './pages/login/login.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { UsersViewComponent } from './pages/shared/users-view/users-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    UsersViewComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig),

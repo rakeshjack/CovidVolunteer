@@ -33,6 +33,18 @@ export class RegisterComponent implements OnInit {
     });
 
   }
+  validatate(passone,passtwo) {
+      if(passone.value==passtwo.value) {
+        console.log("throw NO ERROR");
+        return
+      } else {
+        // console.log("throw error");
+        // this.f.formUserPassword.markAsPending();
+        // this.f.formUserPassword.markAsDirty();
+        // this.f.formUserConfirmPassword.markAsDirty();
+        // this.f.formUserConfirmPassword.markAsPristine();
+      }
+  }
   onSubmit() {
     if (this._RegisterForm.invalid) {
       return;
