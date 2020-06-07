@@ -1,0 +1,59 @@
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-4">
+            <form class="example-form" [formGroup]="_RegisterForm" (ngSubmit)="onSubmit()">
+                
+                <mat-form-field class="example-full-width">
+                    <mat-label>User Name</mat-label>
+                    <input formControlName="formUserName" matInput placeholder="Ex. Ragu" value="">
+                </mat-form-field>
+                
+                <mat-form-field class="example-full-width">
+                    <mat-label>Email</mat-label>
+                    <input formControlName="formUserEmail" matInput placeholder="Ex. example@gmail.com" value="">
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>Age</mat-label>
+                    <input formControlName="formUserAge" matInput placeholder="Ex. Age: 26" value="">
+                </mat-form-field>
+
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>Profession</mat-label>
+                    <input formControlName="formUserProffession" matInput placeholder="Ex. Doctor" value="">
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>New Password</mat-label>
+                    <input type="password" formControlName="formUserPassword" matInput placeholder="Ex. ******" value="">
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>Confirm Password</mat-label>
+                    <input type="password" formControlName="formUserConfirmPassword" matInput placeholder="Ex. ******" value="">
+                </mat-form-field>
+                
+                <mat-form-field class="example-full-width">
+                    <mat-label>Phoneno</mat-label>
+                    <input formControlName="formUserPhoneno" matInput placeholder="Ex. 9045678876" value="">
+                </mat-form-field>
+                
+                <mat-form-field class="example-full-width">
+                    <mat-label>Address</mat-label>
+                    <textarea formControlName="formUserAddress"  matInput placeholder="Ex. Enter Address"></textarea>
+                </mat-form-field>
+                
+                <mat-radio-group formControlName="formUserGender" aria-label="Select an option">
+                    <mat-radio-button value="1">Male</mat-radio-button>
+                    <mat-radio-button value="2">Famle</mat-radio-button>
+                </mat-radio-group>
+                <!-- <input type="file" class="form-control" placeholder="Ex. Profile Image" value=""> -->
+                <br>
+                <button type="submit" mat-button class="btn btn-primary" style="color:white;" color="primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

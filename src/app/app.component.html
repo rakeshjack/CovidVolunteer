@@ -1,13 +1,6 @@
-{{title}}
-<router-outlet></router-outlet>
-<form class="example-form">
-  <mat-form-field class="example-full-width">
-    <mat-label>Favorite food</mat-label>
-    <input matInput placeholder="Ex. Pizza" value="Sushi">
-  </mat-form-field>
 
-  <mat-form-field class="example-full-width">
-    <mat-label>Leave a comment</mat-label>
-    <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
-  </mat-form-field>
-</form>
+       <span><a href="/">HOME</a></span>
+       <span class="spacer"></span>
+       <a  mat-button  routerLink="/register">Register</a>
+       <a  mat-button  routerLink="/login">Login</a>
+<router-outlet></router-outlet>
