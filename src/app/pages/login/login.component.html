@@ -1,9 +1,11 @@
-<div class="container">
+<div class="container" style="margin-top:6%;">
     <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-4">
+            <mat-card-title>
+                LOGIN
+            </mat-card-title>
             <form class="example-form" [formGroup]="_LoginForm" (ngSubmit)="onSubmit()">
-                
                 <mat-form-field class="example-full-width">
                     <mat-label>User Email</mat-label>
                     <input formControlName="formUserEmail" matInput placeholder="Ex. example@gmail.com" value="">
@@ -15,7 +17,8 @@
                 </mat-form-field>
 
                 <br>
-                <button type="submit" mat-button class="btn btn-primary" style="color:white;" color="primary">Submit</button>
+                <button type="submit" mat-button class="btn btn-primary" style="color:white;" color="primary">LOGIN</button>
+                &nbsp;&nbsp;<button class="btn btn-primary" mat-button  routerLink="/register">Register</button>
             </form>
         </div>
     </div>

@@ -2,9 +2,12 @@
 <div class="container">
 
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-3"></div>
+        <div class="col-md-5">
+            <mat-card-title>
+                REGISTER
+            </mat-card-title>
             <form class="example-form" [formGroup]="_RegisterForm" (ngSubmit)="onSubmit()">
-                
                 <mat-form-field class="example-full-width">
                     <mat-label>User Name</mat-label>
                     <input formControlName="formUserName" matInput placeholder="Ex. Ragu" value="">
@@ -52,7 +55,8 @@
                 </mat-radio-group>
                 <!-- <input type="file" class="form-control" placeholder="Ex. Profile Image" value=""> -->
                 <br>
-                <button type="submit" mat-button class="btn btn-primary" style="color:white;" color="primary">Submit</button>
+                <button type="submit" mat-button class="btn btn-primary" style="color:white;" color="primary">Register</button>
+                &nbsp;&nbsp;<button routerLink="/login" mat-button class="btn btn-primary" style="color:white;" color="primary">Login</button>
             </form>
         </div>
     </div>
